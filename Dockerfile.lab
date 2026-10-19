@@ -1,0 +1,22 @@
+ARG OPENCLAW_BASE=asd-openclaw:2026.9.2
+FROM ${OPENCLAW_BASE}
+
+USER root
+COPY container /opt/asd-lab/container
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends gcc libc6-dev \
+ && gcc -shared -fPIC -O2 -Wall -Wextra -ldl \
+      -o /opt/asd-lab/libfailure_inject.so /opt/asd-lab/container/failure-inject.c \
+ && apt-get purge -y --auto-remove gcc libc6-dev \
+ && rm -rf /var/lib/apt/lists/* \
+ && chmod 0555 /opt/asd-lab/container/*.mjs \
+ && chmod -R a-w /opt/asd-lab/container/guard-plugin \
+ && chmod 0555 /opt/asd-lab/libfailure_inject.so
+RUN node /opt/asd-lab/container/patch-openclaw-write.mjs
+COPY cases /opt/asd-lab/cases
+RUN find /opt/asd-lab/cases -type f -exec chmod 0444 {} \;
+USER node
+WORKDIR /workspace
+ENTRYPOINT []
+CMD ["node", "/opt/asd-lab/container/snapshot.mjs"]
+

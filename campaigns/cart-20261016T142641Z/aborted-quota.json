@@ -1,0 +1,8 @@
+{
+  "campaign_id": "cart-20261016T142641Z",
+  "status": "aborted-infrastructure-failure",
+  "attempt_directories_created": 43,
+  "reason": "The provider returned HTTP 403 quota-insufficient errors during execution.",
+  "handling": "The campaign was stopped immediately after the common failure was identified. All attempt directories are retained. No attempt from this incomplete campaign is included in behavioral statistics.",
+  "uses_hidden_reasoning": false
+}

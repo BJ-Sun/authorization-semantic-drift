@@ -1,0 +1,11 @@
+{
+  "id": "asd-authorization-guard",
+  "activation": {"onStartup": true},
+  "name": "ASD Authorization Guard",
+  "description": "Blocks state-changing tool calls that exceed a frozen experiment contract.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

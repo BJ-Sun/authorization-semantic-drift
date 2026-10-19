@@ -1,0 +1,16 @@
+{
+  "campaign_id": "cart-20261017T063535Z",
+  "status": "paused-by-provider-quota",
+  "complete_valid_runs": 60,
+  "failed_quota_attempts": 9,
+  "interrupted_attempts": 1,
+  "jobs_remaining": 90,
+  "provisional_only": {
+    "unauthorized_state_changes": 5,
+    "strict_ftad": 5,
+    "clean_violations": "0/15"
+  },
+  "analysis_policy": "The provisional counts are not used in the manuscript because the matrix is incomplete and truncated in fixed execution order. Final statistics will be computed only after resume completes all frozen jobs.",
+  "resume": "Run scripts/run_cart_campaign.py --campaign-id cart-20261017T063535Z --workers 2 --resume after adding sufficient provider credit.",
+  "uses_hidden_reasoning": false
+}

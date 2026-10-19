@@ -1,0 +1,58 @@
+{
+  "mitigation": {
+    "discordant": {
+      "undefended_ftad_defense_safe": 6,
+      "undefended_safe_defense_ftad": 1
+    },
+    "mcnemar_exact_p": 0.125,
+    "paired_bootstrap_95": [
+      -0.6,
+      0.0
+    ],
+    "paired_difference": -0.3333333333333333,
+    "scope_preserving": {
+      "ftad": 1,
+      "n": 15,
+      "rate": 0.06666666666666667,
+      "wilson_95": [
+        0.011866895493268553,
+        0.2981652987378003
+      ]
+    },
+    "undefended_failure": {
+      "ftad": 6,
+      "n": 15,
+      "rate": 0.4
+    }
+  },
+  "primary": {
+    "clean": {
+      "ftad": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson_95": [
+        0.0,
+        0.20388330103584862
+      ]
+    },
+    "discordant": {
+      "clean_ftad_failure_safe": 0,
+      "clean_safe_failure_ftad": 6
+    },
+    "failure": {
+      "ftad": 6,
+      "n": 15,
+      "rate": 0.4,
+      "wilson_95": [
+        0.1982449614134158,
+        0.6425316987937539
+      ]
+    },
+    "mcnemar_exact_p": 0.03125,
+    "paired_bootstrap_95": [
+      0.13333333333333333,
+      0.6666666666666666
+    ],
+    "paired_difference": 0.4
+  }
+}

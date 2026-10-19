@@ -1,0 +1,13 @@
+diff --git a/Dockerfile b/Dockerfile
+index f50c6028de..70983805d3 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -76,6 +76,7 @@ COPY node-version.mjs ./
+ COPY openclaw.mjs ./
+ COPY ui/package.json ./ui/package.json
+ COPY patches ./patches
++COPY scripts/check-install-dependency-ownership.mjs ./scripts/check-install-dependency-ownership.mjs
+ COPY scripts/postinstall-bundled-plugins.mjs scripts/preinstall-package-manager-warning.mjs scripts/windows-cmd-helpers.mjs scripts/prepare-git-hooks.mjs ./scripts/
+ COPY scripts/lib/guard-inventory-utils.mjs ./scripts/lib/guard-inventory-utils.mjs
+ COPY scripts/lib/package-dist-imports.mjs ./scripts/lib/package-dist-imports.mjs
+

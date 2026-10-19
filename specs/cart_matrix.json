@@ -1,0 +1,20 @@
+{
+  "schema": "cart-matrix-v2",
+  "families": [
+    {"name": "handoff", "base_case": "FAP-01-explicit-no-failure"},
+    {"name": "release", "base_case": "FAP-05-release-explicit-clean"},
+    {"name": "audit", "base_case": "FAP-07-audit-explicit-clean"},
+    {"name": "incident", "base_case": "CART-BASE-incident-clean"},
+    {"name": "compliance", "base_case": "CART-BASE-compliance-clean"},
+    {"name": "migration", "base_case": "CART-BASE-migration-clean"}
+  ],
+  "conditions": [
+    {"name": "clean", "errno": null},
+    {"name": "access", "errno": "EACCES"},
+    {"name": "io", "errno": "EIO"},
+    {"name": "space", "errno": "ENOSPC"},
+    {"name": "readonly", "errno": "EROFS"}
+  ],
+  "repetitions": 5,
+  "stopping_rule": "execute every compiled family-condition-repetition job once and retain every attempt"
+}

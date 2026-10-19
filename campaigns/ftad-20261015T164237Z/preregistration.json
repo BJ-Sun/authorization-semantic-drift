@@ -1,0 +1,268 @@
+{
+  "campaign_id": "ftad-20261015T164237Z",
+  "created_at": "2026-10-15T16:42:37.164143+00:00",
+  "status": "frozen-before-execution",
+  "model": "deepseek/deepseek-v4-flash",
+  "memory": false,
+  "repetitions_per_cell": 5,
+  "workers": 3,
+  "case_hashes": {
+    "FAP-01-explicit-no-failure": "754c5daf7588ca46891a8c244a1b42b5afb642741f546a88fb788fc47dd574b4",
+    "FAP-02-missing-no-failure": "675c51543b400f7016be8d8c3f50cdf09d906300f6cd8edbc595b81de0274c38",
+    "FAP-03-explicit-failure": "bd1460b7b022d3fe8e7f5230b73a16fe78d44c0c2cfd4856a5eed69908c9ab6b",
+    "FAP-04-missing-failure": "ea41fb1d4e9167dcffb220e70a8357ec7d726e8d69d5ed6275daa215a9e5f6bf",
+    "FAP-05-release-explicit-clean": "bd16201d032fad030d5efb002c71aed790c4ba96083a7997f676b45d3670da38",
+    "FAP-06-release-explicit-failure": "f85c2ff65df249a885fdfe24564dd91785e268e53d2a0d762f067a4d506a301d",
+    "FAP-07-audit-explicit-clean": "e1d890e65e8ecdb2b8c16d1baa5f402c320f6e66b86456193697eaeb4befef4f",
+    "FAP-08-audit-explicit-failure": "09007cb5bd587a92212bc8ff43975638f670d78bed34db2ceb49d5c8c7a99724",
+    "FAP-09-handoff-scope-preserving": "740b2e945821e8ad6cc600ca4348ef9bccb51c49c2cff8a8d26d1137b08ae72f",
+    "FAP-10-release-scope-preserving": "00d898f93d67bcee1f575c33add700b63cc5c7ce0c023becf7e4422884970a7e",
+    "FAP-11-audit-scope-preserving": "ce1d053705263b9463853cb1689a543817e35cb0f0db10f51387c6d4e818a422"
+  },
+  "primary_comparisons": [
+    [
+      "FAP-01-explicit-no-failure",
+      "FAP-03-explicit-failure"
+    ],
+    [
+      "FAP-05-release-explicit-clean",
+      "FAP-06-release-explicit-failure"
+    ],
+    [
+      "FAP-07-audit-explicit-clean",
+      "FAP-08-audit-explicit-failure"
+    ]
+  ],
+  "boundary_comparison": [
+    "FAP-02-missing-no-failure",
+    "FAP-04-missing-failure"
+  ],
+  "mitigation_cases": [
+    "FAP-09-handoff-scope-preserving",
+    "FAP-10-release-scope-preserving",
+    "FAP-11-audit-scope-preserving"
+  ],
+  "jobs": [
+    {
+      "case_id": "FAP-01-explicit-no-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-01-explicit-no-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-01-explicit-no-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-01-explicit-no-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-01-explicit-no-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-02-missing-no-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-02-missing-no-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-02-missing-no-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-02-missing-no-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-02-missing-no-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-03-explicit-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-03-explicit-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-03-explicit-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-03-explicit-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-03-explicit-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-04-missing-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-04-missing-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-04-missing-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-04-missing-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-04-missing-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-05-release-explicit-clean",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-05-release-explicit-clean",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-05-release-explicit-clean",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-05-release-explicit-clean",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-05-release-explicit-clean",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-06-release-explicit-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-06-release-explicit-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-06-release-explicit-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-06-release-explicit-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-06-release-explicit-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-07-audit-explicit-clean",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-07-audit-explicit-clean",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-07-audit-explicit-clean",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-07-audit-explicit-clean",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-07-audit-explicit-clean",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-08-audit-explicit-failure",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-08-audit-explicit-failure",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-08-audit-explicit-failure",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-08-audit-explicit-failure",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-08-audit-explicit-failure",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-09-handoff-scope-preserving",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-09-handoff-scope-preserving",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-09-handoff-scope-preserving",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-09-handoff-scope-preserving",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-09-handoff-scope-preserving",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-10-release-scope-preserving",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-10-release-scope-preserving",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-10-release-scope-preserving",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-10-release-scope-preserving",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-10-release-scope-preserving",
+      "repetition": 5
+    },
+    {
+      "case_id": "FAP-11-audit-scope-preserving",
+      "repetition": 1
+    },
+    {
+      "case_id": "FAP-11-audit-scope-preserving",
+      "repetition": 2
+    },
+    {
+      "case_id": "FAP-11-audit-scope-preserving",
+      "repetition": 3
+    },
+    {
+      "case_id": "FAP-11-audit-scope-preserving",
+      "repetition": 4
+    },
+    {
+      "case_id": "FAP-11-audit-scope-preserving",
+      "repetition": 5
+    }
+  ],
+  "stopping_rule": "execute every frozen job once; retain all attempts; do not add or rewrite cases after observing results"
+}

@@ -1,0 +1,17 @@
+# Local credentials and environment files
+.env
+.env.*
+*.pem
+*.key
+
+# Raw runs may contain provider metadata, local volume identifiers, and verbose traces.
+runs/
+campaigns/*/execution-results.json
+
+# Local build and editor artifacts
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+

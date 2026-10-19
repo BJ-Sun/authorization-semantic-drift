@@ -1,0 +1,706 @@
+{
+  "campaign_id": "cart-20261016T064439Z",
+  "created_at": "2026-10-16T06:44:39.414362+00:00",
+  "status": "frozen-before-execution",
+  "method": "counterfactual-authorization-red-teaming-v2",
+  "model": "deepseek/deepseek-v4-flash",
+  "matrix_sha256": "04167d7d072886e80a666059f09ad989a4dc84472b5373b505c7fd81c45b02bc",
+  "case_hashes": {
+    "CART-HANDOFF-CLEAN": "06513dec75458f0ea119448f35e46c24e92bab6a0b1fe790933429a660c8b299",
+    "CART-HANDOFF-ACCESS": "8c284f6d6b88b531ea33a1ae878198e6d61760f399383775b5368c2b6337265d",
+    "CART-HANDOFF-IO": "04f76abff517184ec043c9ddc3ece6bd130630a2dea51cd851e3fb31d5a84d2b",
+    "CART-HANDOFF-SPACE": "bd8fe714200919491d09bbdbd44ae577804ac4d4f54a7c3196e14ab2470c8986",
+    "CART-HANDOFF-READONLY": "2e9d97687870d98d4c7a85c7cabc6cf20c8cb9139890e32cd285896e0137e9ae",
+    "CART-RELEASE-CLEAN": "0fcbe24f44c348f7884902fdca7d4e8c69884fd4dce75812e926035965f74058",
+    "CART-RELEASE-ACCESS": "c509fa5bad7ed9281ce95e76a9e6a61adff3f7b742964106cfb136cdd52c2d0b",
+    "CART-RELEASE-IO": "28e6391abefceace6c132c56b2be22025ef1dadf286b2eb5c641b810f1fd7523",
+    "CART-RELEASE-SPACE": "0fb8dd9225e6ddaf43f643660c514882ec6bdb1253ea2d052663f306d04471cb",
+    "CART-RELEASE-READONLY": "5f1845f3abef7bb8fcbad4f61fd9f22a400400380926599552dc5790cdb29f00",
+    "CART-AUDIT-CLEAN": "6d032fd8a15e3f30d7c9e44d51c911206456abb68d3029f7b1e55155435418d5",
+    "CART-AUDIT-ACCESS": "ba3fd3486bf3e312e8387720c8ea1f85f5974870b054878afbbff287c0e912d1",
+    "CART-AUDIT-IO": "cca1b56c817335b18438f482f64583e173530c696e925e31452faf451caa0960",
+    "CART-AUDIT-SPACE": "6f14b9149f16cecf15660dc2045f7be6fee7653b7e63d7c919cfb55b757f66cc",
+    "CART-AUDIT-READONLY": "23a6315f34b700da01f1ad479621c7e86f055a2a97b4d1a17b86f8228670e156",
+    "CART-INCIDENT-CLEAN": "b0328857ed76e86efc3f6ef574a44f0fcfe6ca32f8d2a512c2e8f106b4fbc9b9",
+    "CART-INCIDENT-ACCESS": "918628179e7fc577777a350b0f03c6c313f8f12ec51033500d862c2ee2993498",
+    "CART-INCIDENT-IO": "34477228c6c4c8b81bce8bbf85f8b266a8ee6cb99c14b8065a23c8c60a8c28f9",
+    "CART-INCIDENT-SPACE": "79e91eb3325ed12db44959724e0b684f2ed8ac42090a4d15ec819d089a413488",
+    "CART-INCIDENT-READONLY": "933864d9283cfe9f8ec8c381ca399b3c702ef97759f3497e4ea6c00882546190",
+    "CART-COMPLIANCE-CLEAN": "0c180a1913d1b2ac01febef1b1ccfc651e7794a20c195986b3474bdd6b1eeb76",
+    "CART-COMPLIANCE-ACCESS": "9f771da0f3e7de6e2609ab4a8b88464261659487b0130834aad8a726a5559f43",
+    "CART-COMPLIANCE-IO": "af0b04223e4d03cff5d357b61ac167c492b2dea5e381e169e1ca43504638f894",
+    "CART-COMPLIANCE-SPACE": "26d35bf7b1eff09be0275cee0335380ab9dd48a85b8da6408e825d03dd3e3966",
+    "CART-COMPLIANCE-READONLY": "2184fa2a370a0397e5ab7e0dd8baa745788027fdf4aea8489d9916236b1a1953",
+    "CART-MIGRATION-CLEAN": "6fbc6d3fae8881157687e9939a442da40a2f7f5481fca5af0ff8f7b936367e2d",
+    "CART-MIGRATION-ACCESS": "a205b6ddcc228869f741e6db270ecdb0fc292e7a152349715e98ea9d8142cb3b",
+    "CART-MIGRATION-IO": "e138dbde333fb7dbe64adee1d3526e8670c07d153f17ee9eadf08fc8dc0e63d5",
+    "CART-MIGRATION-SPACE": "1bdc449a95c1a4883b7dcc4e5000f2a0bc17313c40a5337daae8cc10c98e2792",
+    "CART-MIGRATION-READONLY": "f09ff0510c9dc0f62892930aaab9d1057b3238479345f4640166ef53b383a43d"
+  },
+  "paired_comparisons": [
+    {
+      "family": "handoff",
+      "clean": "CART-HANDOFF-CLEAN",
+      "failures": [
+        "CART-HANDOFF-ACCESS",
+        "CART-HANDOFF-IO",
+        "CART-HANDOFF-SPACE",
+        "CART-HANDOFF-READONLY"
+      ]
+    },
+    {
+      "family": "release",
+      "clean": "CART-RELEASE-CLEAN",
+      "failures": [
+        "CART-RELEASE-ACCESS",
+        "CART-RELEASE-IO",
+        "CART-RELEASE-SPACE",
+        "CART-RELEASE-READONLY"
+      ]
+    },
+    {
+      "family": "audit",
+      "clean": "CART-AUDIT-CLEAN",
+      "failures": [
+        "CART-AUDIT-ACCESS",
+        "CART-AUDIT-IO",
+        "CART-AUDIT-SPACE",
+        "CART-AUDIT-READONLY"
+      ]
+    },
+    {
+      "family": "incident",
+      "clean": "CART-INCIDENT-CLEAN",
+      "failures": [
+        "CART-INCIDENT-ACCESS",
+        "CART-INCIDENT-IO",
+        "CART-INCIDENT-SPACE",
+        "CART-INCIDENT-READONLY"
+      ]
+    },
+    {
+      "family": "compliance",
+      "clean": "CART-COMPLIANCE-CLEAN",
+      "failures": [
+        "CART-COMPLIANCE-ACCESS",
+        "CART-COMPLIANCE-IO",
+        "CART-COMPLIANCE-SPACE",
+        "CART-COMPLIANCE-READONLY"
+      ]
+    },
+    {
+      "family": "migration",
+      "clean": "CART-MIGRATION-CLEAN",
+      "failures": [
+        "CART-MIGRATION-ACCESS",
+        "CART-MIGRATION-IO",
+        "CART-MIGRATION-SPACE",
+        "CART-MIGRATION-READONLY"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "case_id": "CART-HANDOFF-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-HANDOFF-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-HANDOFF-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-HANDOFF-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-RELEASE-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-RELEASE-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-RELEASE-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-RELEASE-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-AUDIT-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-AUDIT-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-AUDIT-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-INCIDENT-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-INCIDENT-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-INCIDENT-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-INCIDENT-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-COMPLIANCE-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-COMPLIANCE-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-COMPLIANCE-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-COMPLIANCE-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-MIGRATION-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-MIGRATION-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 5
+    }
+  ],
+  "stopping_rule": "execute every compiled family-condition-repetition job once and retain every attempt",
+  "uses_hidden_reasoning": false
+}

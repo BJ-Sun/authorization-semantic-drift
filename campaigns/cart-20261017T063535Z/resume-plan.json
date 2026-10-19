@@ -1,0 +1,20 @@
+{
+  "campaign_id": "cart-20261017T063535Z",
+  "complete_runs_reused": 60,
+  "jobs_remaining": 90,
+  "completed_by_case": {
+    "CART-AUDIT-ACCESS": 5,
+    "CART-AUDIT-CLEAN": 5,
+    "CART-HANDOFF-ACCESS": 5,
+    "CART-HANDOFF-CLEAN": 5,
+    "CART-HANDOFF-IO": 5,
+    "CART-HANDOFF-READONLY": 5,
+    "CART-HANDOFF-SPACE": 5,
+    "CART-RELEASE-ACCESS": 5,
+    "CART-RELEASE-CLEAN": 5,
+    "CART-RELEASE-IO": 5,
+    "CART-RELEASE-READONLY": 5,
+    "CART-RELEASE-SPACE": 5
+  },
+  "rule": "Only return-code-zero runs with parseable state and trajectory oracle outputs are reused. Failed and interrupted attempts remain retained but are not counted."
+}

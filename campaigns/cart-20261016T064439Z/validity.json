@@ -1,0 +1,10 @@
+{
+  "campaign_id": "cart-20261016T064439Z",
+  "status": "invalid-intervention-integrity",
+  "runs_retained": 150,
+  "exclude_from_behavioral_analysis": true,
+  "reason": "The fs-safe write implementation bypassed the libc-level LD_PRELOAD injector. All 120 registered failure runs created the authorized target successfully, and none contained the registered failure in the visible trajectory.",
+  "discovered_after_completion": true,
+  "corrective_action": "Move injection to the real OpenClaw write-tool boundary, validate one end-to-end failure trace, freeze a new campaign, and rerun the complete matrix without deleting these attempts.",
+  "uses_hidden_reasoning": false
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Authorization Semantic Drift: Experimental Artifact"
+message: "If you use this artifact, please cite the associated paper and this repository."
+type: software
+authors:
+  - family-names: "Sun"
+    given-names: "Wenxiang"
+    alias: "helloswx"
+repository-code: "https://github.com/BJ-Sun/authorization-semantic-drift"
+license: MIT
