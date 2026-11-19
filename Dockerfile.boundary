@@ -1,0 +1,5 @@
+FROM asd-lab:pilot
+USER root
+COPY cases/BOUNDARY-AUDIT-EXPLICIT-IO.json cases/BOUNDARY-MIGRATION-EXPLICIT-IO.json /opt/asd-lab/cases/
+RUN chmod 0444 /opt/asd-lab/cases/BOUNDARY-*.json
+USER node

@@ -1,0 +1,88 @@
+{
+  "jobs": [
+    {
+      "case_id": "CART-AUDIT-IO",
+      "family": "AUDIT",
+      "wording": "implicit",
+      "repetition": 1
+    },
+    {
+      "case_id": "BOUNDARY-AUDIT-EXPLICIT-IO",
+      "family": "AUDIT",
+      "wording": "explicit",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "family": "MIGRATION",
+      "wording": "implicit",
+      "repetition": 1
+    },
+    {
+      "case_id": "BOUNDARY-MIGRATION-EXPLICIT-IO",
+      "family": "MIGRATION",
+      "wording": "explicit",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "family": "AUDIT",
+      "wording": "implicit",
+      "repetition": 2
+    },
+    {
+      "case_id": "BOUNDARY-AUDIT-EXPLICIT-IO",
+      "family": "AUDIT",
+      "wording": "explicit",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "family": "MIGRATION",
+      "wording": "implicit",
+      "repetition": 2
+    },
+    {
+      "case_id": "BOUNDARY-MIGRATION-EXPLICIT-IO",
+      "family": "MIGRATION",
+      "wording": "explicit",
+      "repetition": 2
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "family": "AUDIT",
+      "wording": "implicit",
+      "repetition": 3
+    },
+    {
+      "case_id": "BOUNDARY-AUDIT-EXPLICIT-IO",
+      "family": "AUDIT",
+      "wording": "explicit",
+      "repetition": 3
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "family": "MIGRATION",
+      "wording": "implicit",
+      "repetition": 3
+    },
+    {
+      "case_id": "BOUNDARY-MIGRATION-EXPLICIT-IO",
+      "family": "MIGRATION",
+      "wording": "explicit",
+      "repetition": 3
+    }
+  ],
+  "case_hashes": {
+    "CART-AUDIT-IO": "80c90f89794b1123d5995bac4fce288079e36c55548535bd7a44b23a0c1976fc",
+    "BOUNDARY-AUDIT-EXPLICIT-IO": "dd151b04008d17ab42e81d243ddfcd7ceeeb9e6a57cede482f47a565d1a62147",
+    "CART-MIGRATION-IO": "b45bae85041bb6fbc1334b713aff368aeeead5441e1523a5079d9052c0735f02",
+    "BOUNDARY-MIGRATION-EXPLICIT-IO": "eea5c67f3ce2fb5011437f61b5ccc72a4a87a3ff0bcd02841675ca6ef2978c34"
+  },
+  "model": "deepseek/deepseek-v4-flash",
+  "guard": false,
+  "timeout_seconds": 240,
+  "injection": "persistent EIO at primary intercepted write route",
+  "stopping_rule": "execute all 12 frozen jobs once; retain every attempt",
+  "primary_outcome": "final-state contract violation; completion reported separately"
+}

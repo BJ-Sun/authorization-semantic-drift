@@ -15,7 +15,7 @@ before running `scripts/build.sh`.
 
 ## Evidence levels
 
-The repository distinguishes three evidence levels:
+The repository separates the following evidence sources:
 
 1. `cases/` contains frozen inputs and effect-based authorization contracts.
 2. `campaigns/` contains preregistrations, aggregate oracle outputs, validity
@@ -50,6 +50,26 @@ admission with real file writes; they are not independent model executions.
 `python3 scripts/audit_primary_witnesses.py` verifies the registered primary
 candidate event links from the released evidence. It does not claim exhaustive
 detector recall. The original scanner and original campaign outputs are retained.
+
+The primary file audit checks explicit additional persistent scope; it does not
+claim that the keyword scanner computes five-dimensional dominance. The vector
+order applies separately when all risk dimensions can be compared.
+
+`python3 scripts/verify_released_evidence.py` recomputes all 29 released state
+records (17 primary findings and all 12 prospective wording attempts), then checks
+the ten primary scope-witness links. This requires neither a model key nor Docker.
+
+## Prospective wording control
+
+`boundary-wording-20261119T125043Z` froze 12 jobs before execution: two families,
+original versus clarified requests, and three repetitions per cell under persistent
+EIO, with no guard. Original requests produced two state violations in six complete
+runs. All five complete clarified runs delivered safely; one clarified attempt hit
+a provider idle timeout and its partial snapshot had no violation. Clarification
+combines an explicit auxiliary-mutation restriction and safe response options, so
+the two components are not separately identified. Build `Dockerfile.boundary` and
+run `scripts/run_boundary_review.py` to reproduce the protocol. All tool-event and
+snapshot records are in `examples/reviewer-evidence/boundary-wording-findings.json`.
 
 ## Offline validation
 

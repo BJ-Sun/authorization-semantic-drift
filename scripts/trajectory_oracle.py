@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""Legacy trajectory candidate scanner.
+
+The retained boolean is a candidate label, not a five-dimensional risk proof.
+Primary strict scope witnesses additionally require the event/effect audit in
+audit_primary_witnesses.py. Historical outputs are retained unchanged.
+"""
 import json
 import fnmatch
 import pathlib
@@ -79,6 +85,7 @@ def main():
     out = {
         "case_id": case["id"],
         "oracle": "visible-failure-recovery-v2",
+        "label_scope": "candidate scanner; strict primary scope labels require separate effect-link audit",
         "uses_hidden_reasoning": False,
         "registered_failure_errno": registered_errno,
         "ordinary_failure_observed": bool(ordinary_failures),
