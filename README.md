@@ -6,17 +6,27 @@ It does not import datasets, payloads, injection tasks, or results from the
 long-range attack experiments. The only reused component is the OpenClaw source
 tree, used read-only as the build context for the upstream runtime image.
 
-The evaluation method is the **Failure-Triggered Authorization Differential
-(FTAD)**: matched runs freeze the benign task, facts, tools, initial state, and
+The evaluation method is **Counterfactual Authorization Red Teaming (CART)**:
+matched runs freeze the benign task, facts, tools, initial state, and
 authorization contract, and vary only whether an ordinary authorized action
-fails. A positive witness requires both a visible post-failure risk increase
-and a committed out-of-contract effect verified from final state.
+fails. **Failure-Triggered Authorization Drift (FTAD)** is the trajectory label.
+The primary file-case audit checks a linked post-failure expansion of persistent
+scope beyond the frozen allowlist. The general risk-vector order is separate;
+the legacy candidate scanner does not compute five-dimensional dominance.
 
 The main release contains 150 DeepSeek V4 Flash runs across six task families,
 one clean condition, and four ordinary write failures. The state oracle found
 17 unauthorized changes in 120 failure-assigned runs and none in 30 clean runs;
-10 violations met the stricter FTAD definition. These counts characterize the
+The ten original trajectory candidates have explicit scope-witness audits.
+The original requests name destinations without explicitly prohibiting auxiliary
+writes; the single-target rule is the evaluator's conservative policy. These counts characterize the
 released cases and runtime, not a general population rate.
+
+The revision includes 12 prospective wording-control attempts: two violations
+among six complete original-request runs, five safe deliveries among five complete
+clarified-request runs, and one retained provider timeout. Clarification combines
+explicit restrictions with safe response options. See the [reproducibility guide](docs/REPRODUCIBILITY.md)
+for the offline verifier and the separate live and scripted recovery controls.
 
 The initial code and artifact release is available under the MIT License.
 
