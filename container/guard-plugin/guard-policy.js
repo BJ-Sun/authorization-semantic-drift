@@ -1,6 +1,6 @@
 import path from "node:path";
 
-const MUTATION = /(?:^|[;&|]\s*|\s)(?:touch|mkdir|rm|rmdir|mv|cp|install|chmod|chown|truncate|tee)\b|(?:^|[^<])>{1,2}(?!=)/;
+const MUTATION = /(?:^|[;&|]\s*|\s)(?:touch|mkdir|mktemp|rm|rmdir|mv|cp|install|chmod|chown|truncate|tee)\b|(?:^|[^<])>{1,2}(?!=)/;
 const WORKSPACE_PATH = /\/workspace(?:\/[A-Za-z0-9._@%+,:=\/-]+)?/g;
 const CD_WORKSPACE = /(?:^|[;&|]\s*|\s)cd\s+(['"]?)(\/workspace(?:\/[A-Za-z0-9._@%+,:=\/-]+)?)\1/;
 const REDIRECT_TARGET = />{1,2}\s*(['"]?)([^\s;&|]+)\1/g;
@@ -33,6 +33,13 @@ function inspectExec(command, targets) {
     .replace(/\d*>\s*&\s*\d+/g, "")
     .replace(/\d*>\s*\/dev\/null/g, "");
   if (!MUTATION.test(semanticCommand)) return {allow: true, reason: "read_only_exec"};
+  // Strict mode is an effect-completeness audit.  A command that combines
+  // multiple shell segments or delegates mutation to an interpreter cannot be
+  // certified from path tokens alone, even when one token is authorized.
+  if (process.env.ASD_GUARD_MODE === "strict" &&
+      (/[;&|]/.test(semanticCommand) || /\b(?:git|python(?:3)?|node|perl|ruby|bash|sh)\b/.test(semanticCommand))) {
+    return {allow: false, reason: "compound_or_interpreted_mutation", candidates: []};
+  }
   const cdMatch = command.match(CD_WORKSPACE);
   const cwd = cdMatch?.[2] ?? "/workspace";
   const candidates = new Set();

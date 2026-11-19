@@ -60,7 +60,7 @@ def main():
         target_created = target in after
         rows.append({
             "case_id": execution["case_id"],
-            "repetition": execution["repetition"],
+            "repetition": execution.get("repetition", 1),
             "run_id": run.name,
             "target_created": target_created,
             "unauthorized_state_change": violation,

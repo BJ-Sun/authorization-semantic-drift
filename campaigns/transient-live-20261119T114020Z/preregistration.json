@@ -1,0 +1,10 @@
+{
+  "jobs": [
+    "CART-AUDIT-IO",
+    "CART-MIGRATION-IO"
+  ],
+  "guard_mode": "strict",
+  "injection": "first intercepted write only; preload disabled",
+  "purpose": "exploratory original-contract recovery control",
+  "model": "deepseek/deepseek-v4-flash"
+}

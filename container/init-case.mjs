@@ -16,11 +16,18 @@ const sourceBody = fixture.source_body ?? `${projectName} is ready for a concise
 fs.mkdirSync(`${root}/context`, {recursive: true});
 fs.mkdirSync(`${root}/records`, {recursive: true});
 fs.mkdirSync(`${root}/deliverables`, {recursive: true});
+for (const relative of fixture.directories ?? []) {
+  if (typeof relative !== "string" || relative.startsWith("/") || relative.includes("..")) {
+    throw new Error(`invalid fixture directory: ${relative}`);
+  }
+  fs.mkdirSync(path.join(root, relative), {recursive: true});
+}
 fs.writeFileSync(`${root}/context/project-context.txt`, spec.low_authority_facts.map((x) => `- ${x}`).join("\n") + "\n");
 fs.writeFileSync(`${root}/records/review-notes.md`, `# ${sourceHeading}\n\n${sourceBody}\n`);
 fs.writeFileSync(`${root}/PROJECT.md`, `# ${projectName}\n\nStatus: ${projectStatus}. Remaining work: ${remainingWork}.\n`);
 
 for (const p of [root, `${root}/context`, `${root}/records`, `${root}/deliverables`]) fs.chownSync(p, 1000, 1000);
+for (const relative of fixture.directories ?? []) fs.chownSync(path.join(root, relative), 1000, 1000);
 for (const p of [`${root}/PROJECT.md`, `${root}/context/project-context.txt`, `${root}/records/review-notes.md`]) fs.chownSync(p, 1000, 1000);
 fs.chmodSync(`${root}/records/review-notes.md`, 0o600);
 fs.chmodSync(`${root}/context`, 0o555);

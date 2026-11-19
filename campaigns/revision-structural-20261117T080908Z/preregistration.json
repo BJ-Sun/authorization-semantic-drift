@@ -1,0 +1,226 @@
+{
+  "campaign_id": "revision-structural-20261117T080908Z",
+  "created_at": "2026-11-17T08:09:08.355576+00:00",
+  "status": "frozen-before-execution",
+  "experiment": "revision-structural",
+  "model": "deepseek/deepseek-v4-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "model_network": "asd-model-egress",
+  "authorization_guard": false,
+  "case_hashes": {
+    "REV-NESTED-CLEAN": "2b0845362baee87b6bf751f9193465763c5b743ebef7d8a3a1659c8802dd2507",
+    "REV-NESTED-ACCESS": "e9efb5f4655e52669b552889c08d36be5a57daeaecf5350a5870feb03c020746",
+    "REV-NESTED-IO": "34d7b11a0ddd057854df5e92d0cb2d50da010a78a27eb49f85a82018e8079520",
+    "REV-NESTED-SPACE": "531bcfedb42779f5c3e8c5a541990243f948a6e4ec4b2b9ff46e6368acd59f94",
+    "REV-NESTED-READONLY": "635b6ee870b21207410de85c765376bf280e33557778eec10b1daa2c14cc0141",
+    "REV-TWOFILE-CLEAN": "46af1ef415d417f27b7790444fe5d43a8fef48352120c73f2575c992a69d264c",
+    "REV-TWOFILE-ACCESS": "7e3aaf65ddac626d897cb198e607bc53a875c81984e5ab7af2d5762ecffb3bf3",
+    "REV-TWOFILE-IO": "7a70121223890d522d3a0cf06915263ee9e20deaabe298821aa478a1000948f0",
+    "REV-TWOFILE-SPACE": "542addf2e2e1eaa7fa381022b5958e12c2fb5788fa090b70f8e8c9e8047e4010",
+    "REV-TWOFILE-READONLY": "7c5a11a3e4fc4e25fd2e26e096c680072a54414430f5a553f7f40c0b237afc43"
+  },
+  "jobs": [
+    {
+      "case_id": "REV-NESTED-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-NESTED-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-NESTED-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-NESTED-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-NESTED-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-NESTED-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-NESTED-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-NESTED-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-NESTED-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-NESTED-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-NESTED-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-NESTED-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-NESTED-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-NESTED-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-NESTED-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-NESTED-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-NESTED-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-NESTED-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-NESTED-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-NESTED-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-NESTED-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-NESTED-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-NESTED-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-NESTED-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-NESTED-READONLY",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-TWOFILE-CLEAN",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-TWOFILE-CLEAN",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-TWOFILE-CLEAN",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-TWOFILE-CLEAN",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-TWOFILE-CLEAN",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-TWOFILE-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-TWOFILE-ACCESS",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-TWOFILE-ACCESS",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-TWOFILE-ACCESS",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-TWOFILE-ACCESS",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-TWOFILE-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-TWOFILE-IO",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-TWOFILE-IO",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-TWOFILE-IO",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-TWOFILE-IO",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-TWOFILE-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-TWOFILE-SPACE",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-TWOFILE-SPACE",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-TWOFILE-SPACE",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-TWOFILE-SPACE",
+      "repetition": 5
+    },
+    {
+      "case_id": "REV-TWOFILE-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "REV-TWOFILE-READONLY",
+      "repetition": 2
+    },
+    {
+      "case_id": "REV-TWOFILE-READONLY",
+      "repetition": 3
+    },
+    {
+      "case_id": "REV-TWOFILE-READONLY",
+      "repetition": 4
+    },
+    {
+      "case_id": "REV-TWOFILE-READONLY",
+      "repetition": 5
+    }
+  ],
+  "stopping_rule": "execute all 50 frozen jobs once and retain every attempt",
+  "uses_hidden_reasoning": false
+}

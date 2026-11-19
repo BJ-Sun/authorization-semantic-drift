@@ -1,0 +1,137 @@
+{
+  "campaign_id": "revision-strict-guard-20261118T135303Z",
+  "created_at": "2026-11-18T13:53:03.606208+00:00",
+  "status": "frozen-before-execution",
+  "experiment": "revision-strict-guard",
+  "model": "deepseek/deepseek-v4-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "model_network": "asd-model-egress",
+  "authorization_guard": true,
+  "guard_mode": "strict",
+  "case_hashes": {
+    "CART-HANDOFF-ACCESS": "67a0218d0a0049f8fd143ce49a475606b901230fc993af57de7a8d8a5f80842b",
+    "CART-HANDOFF-IO": "fa8bec998739c5735c59dae9619e604abf04772d8d95c82485b06e8e305a7dba",
+    "CART-HANDOFF-SPACE": "133520dbacd0c5e90adb46951e01773708efbf599e95c775da3c2d28b0cc4aa0",
+    "CART-HANDOFF-READONLY": "d0a74f45a2e3203d5ccaef09cc2731ca88adb64fadd67525558f358de69bf602",
+    "CART-RELEASE-ACCESS": "2f5d70ce5879ff710558c04c8a3cf86066a73acc586536bc265a0f372d5d344a",
+    "CART-RELEASE-IO": "859a8496b935c4eeb362fce05a6f2ace828db2d264286e60b9ba0cca3d422309",
+    "CART-RELEASE-SPACE": "d643902d65007ef7923a0a8d8bcb94954926d49c452265b9bc60645efec31e69",
+    "CART-RELEASE-READONLY": "f4b0fb3d4320ecf8f0f9b19ddaf526c53c4569e97ee3e7dd4739199f105f1c88",
+    "CART-AUDIT-ACCESS": "74765fb66bebcffb5d8b1e3e3f73b47ee74f87465078520c4220604337b8fa47",
+    "CART-AUDIT-IO": "80c90f89794b1123d5995bac4fce288079e36c55548535bd7a44b23a0c1976fc",
+    "CART-AUDIT-SPACE": "5f0f0c3a60be1abd8a837d06f1fe2c896ba1f497cfb4578dd49f498362b0105f",
+    "CART-AUDIT-READONLY": "7e207df21863225022fe728a8e7b21a282c381dbb6a8bae415cacf3a075d1dad",
+    "CART-INCIDENT-ACCESS": "afb8376b39ba4ab260efe6d154837984217cdebbcdb9c75c7a7c1e3483205dd4",
+    "CART-INCIDENT-IO": "3fd3a46d70f74477892f1f8aca8115d9fe5ddd5d699bed0a14cfc80354f591ff",
+    "CART-INCIDENT-SPACE": "888ae82a76b8d7e8226022027f904ba2f3748107c06b533ddffff9f622665b93",
+    "CART-INCIDENT-READONLY": "4621b1893f1f56ad128c2c0cad32f05f2538b9bd11f05388fff98fe1353a36b2",
+    "CART-COMPLIANCE-ACCESS": "847a904132e7d5b76570f768dcaf85459b0ddd6ba9d145affa0b79ba3428fc33",
+    "CART-COMPLIANCE-IO": "c029c4ba82080968947ae68eaf5b6ca3d8eb8c5b4789ff9db88cc1644c7dac18",
+    "CART-COMPLIANCE-SPACE": "1ed773c7b644c9cbae22171e67cb8ca5cb73bbb647fffd86ca580033d0648059",
+    "CART-COMPLIANCE-READONLY": "c77293b0094d9f100edbb735a7be4d8b00d551b8f2bb2f2d252d5e9d9cdb2a07",
+    "CART-MIGRATION-ACCESS": "7e073240c966947457d3dbe0dbb3608746a9a04f7fe60e79de80df7eae462f51",
+    "CART-MIGRATION-IO": "b45bae85041bb6fbc1334b713aff368aeeead5441e1523a5079d9052c0735f02",
+    "CART-MIGRATION-SPACE": "9da7254e15520eca8c4832341b96aae16369e7fc0a0552b8704bc42fbeaf13cd",
+    "CART-MIGRATION-READONLY": "3cc0fc5c47f840df1407012154f0bc5c2c96e7116685d9d3a9c8b7e63657ac95"
+  },
+  "jobs": [
+    {
+      "case_id": "CART-HANDOFF-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-HANDOFF-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-RELEASE-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-AUDIT-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-INCIDENT-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-COMPLIANCE-READONLY",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-ACCESS",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-IO",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-SPACE",
+      "repetition": 1
+    },
+    {
+      "case_id": "CART-MIGRATION-READONLY",
+      "repetition": 1
+    }
+  ],
+  "stopping_rule": "execute all 24 frozen jobs once and retain every attempt",
+  "uses_hidden_reasoning": false
+}

@@ -17,17 +17,22 @@ def main():
     args = ap.parse_args()
     campaign_dir = LAB / "campaigns" / args.campaign_id
     execution = load(campaign_dir / "execution-results.json")
+    valid_execution = [
+        item for item in execution
+        if item.get("returncode") == 0 and item.get("run_dir")
+    ]
     repetition_by_run = {
         pathlib.Path(item["run_dir"]).name: item["repetition"]
-        for item in execution if item.get("run_dir")
+        for item in valid_execution
     }
+    valid_run_names = set(repetition_by_run)
     rows = []
     for run in sorted((LAB / "runs").iterdir()):
         manifest_path = run / "manifest.json"
         if not manifest_path.exists():
             continue
         manifest = load(manifest_path)
-        if manifest.get("campaign_id") != args.campaign_id:
+        if manifest.get("campaign_id") != args.campaign_id or run.name not in valid_run_names:
             continue
         case = load(run / "case.json")
         state = load(run / "oracle.json") if (run / "oracle.json").exists() else {}

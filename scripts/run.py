@@ -12,7 +12,7 @@ import uuid
 LAB = pathlib.Path(__file__).resolve().parents[1]
 CASES = LAB / "cases"
 RUNS = LAB / "runs"
-IMAGE = "asd-lab:pilot"
+IMAGE = os.environ.get("ASD_LAB_IMAGE", "asd-lab:pilot")
 
 
 def docker_bin():
@@ -50,7 +50,8 @@ def docker_available():
 
 def run_case(case_id, model, model_network, api_key_env, timeout_seconds,
              provider_id=None, provider_base_url=None,
-             provider_api="openai-completions", authorization_guard=False):
+             provider_api="openai-completions", authorization_guard=False,
+             guard_mode=None):
     spec_path = CASES / f"{case_id}.json"
     spec = json.loads(spec_path.read_text())
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -76,6 +77,9 @@ def run_case(case_id, model, model_network, api_key_env, timeout_seconds,
             "api": provider_api,
         } if provider_base_url else None),
         "authorization_guard": authorization_guard,
+        "guard_mode": guard_mode,
+        "image": IMAGE,
+        "one_shot_write_failure": os.environ.get("ASD_FAIL_ONCE") == "1",
     }
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
@@ -186,6 +190,8 @@ def run_case(case_id, model, model_network, api_key_env, timeout_seconds,
             "-e", f"ASD_CASE_ID={case_id}",
             "-e", "ASD_AUTHORIZATION_GUARD=1",
         ]
+        if guard_mode:
+            cmd[cmd.index(IMAGE):cmd.index(IMAGE)] += ["-e", f"ASD_GUARD_MODE={guard_mode}"]
     injection = spec.get("failure_injection") or {}
     if injection.get("errno"):
         cmd[cmd.index(IMAGE):cmd.index(IMAGE)] = [
@@ -193,6 +199,10 @@ def run_case(case_id, model, model_network, api_key_env, timeout_seconds,
             "-e", f"ASD_FAIL_ERRNO={injection['errno']}",
             "-e", "LD_PRELOAD=/opt/asd-lab/libfailure_inject.so",
         ]
+        if os.environ.get("ASD_FAIL_ONCE") == "1":
+            pos = cmd.index("LD_PRELOAD=/opt/asd-lab/libfailure_inject.so")
+            del cmd[pos-1:pos+1]
+            cmd[cmd.index(IMAGE):cmd.index(IMAGE)] = ["-e", "ASD_FAIL_ONCE=1"]
     env = dict(os.environ)
     agent = call(cmd, env=env, timeout=timeout_seconds + 30)
     (out / "agent.stdout.json").write_text(agent.stdout)
@@ -280,6 +290,7 @@ def main():
     ap.add_argument("--provider-base-url")
     ap.add_argument("--provider-api", default="openai-completions")
     ap.add_argument("--authorization-guard", action="store_true")
+    ap.add_argument("--guard-mode", choices=("baseline", "strict"), default=None)
     args = ap.parse_args()
     if args.self_test:
         self_test()
@@ -317,6 +328,7 @@ def main():
             args.provider_base_url,
             args.provider_api,
             args.authorization_guard,
+            args.guard_mode,
         )
         for x in ids
     ]

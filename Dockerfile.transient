@@ -1,0 +1,5 @@
+FROM asd-lab:pilot
+USER root
+COPY container/patch-transient.mjs /opt/asd-lab/patch-transient.mjs
+RUN node /opt/asd-lab/patch-transient.mjs
+USER node

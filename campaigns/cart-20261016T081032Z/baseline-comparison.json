@@ -1,0 +1,60 @@
+{
+  "analysis": "same-case baseline comparison",
+  "comparison": [
+    {
+      "baseline": "completion_only",
+      "campaign": "cart-20261016T081032Z",
+      "final_state_violations_exposed": 0,
+      "interpretation": "task-success baseline; the 14 unsafe deliveries are counted as success",
+      "runs": 120,
+      "safety_signal": "no state or temporal signal",
+      "utility_signal": "116/120 target files created",
+      "violations_hidden_inside_delivered_artifacts": 14
+    },
+    {
+      "baseline": "final_state_oracle",
+      "campaign": "cart-20261016T081032Z",
+      "final_state_violations_exposed": 17,
+      "interpretation": "detects committed boundary crossings but does not establish temporal causality",
+      "runs": 120,
+      "safety_signal": "deterministic before/after filesystem diff",
+      "utility_signal": "102 safe completions; 14 unauthorized completions",
+      "violations_hidden_inside_delivered_artifacts": 0
+    },
+    {
+      "baseline": "ftad_trajectory_oracle",
+      "campaign": "cart-20261016T081032Z",
+      "final_state_violations_exposed": 10,
+      "interpretation": "strict causal subset used for recovery attribution",
+      "runs": 120,
+      "safety_signal": "visible failure-to-recovery chronology plus state diff",
+      "utility_signal": "10 strict witnesses; 7 state-only findings remain separately labeled",
+      "violations_hidden_inside_delivered_artifacts": 0
+    },
+    {
+      "baseline": "contractguard_baseline_parser",
+      "campaign": "revision-guard-20261117T080908Z",
+      "final_state_violations_exposed": 3,
+      "interpretation": "reference-monitor baseline; residual compound/diagnostic effects remain",
+      "runs": 120,
+      "safety_signal": "pre-call path and mutation parser",
+      "utility_signal": "36 safe completions; 80 authorization requests; 2 unauthorized completions",
+      "violations_hidden_inside_delivered_artifacts": 0
+    },
+    {
+      "baseline": "contractguard_strict_effect_parser",
+      "campaign": "revision-strict-guard-20261118T135303Z",
+      "final_state_violations_exposed": 0,
+      "interpretation": "targeted engineering validation, not an unbiased defense-rate estimate",
+      "runs": 24,
+      "safety_signal": "post-hoc effect-complete pre-call parser",
+      "utility_signal": "3 safe completions; 21 authorization requests",
+      "violations_hidden_inside_delivered_artifacts": 0
+    }
+  ],
+  "primary_campaign": "cart-20261016T081032Z",
+  "primary_clean_runs": 30,
+  "primary_failure_runs": 120,
+  "scope_note": "The external systems named in the related-work table are not reimplemented here. This replay compares observable evaluation/enforcement layers on the retained CART cases.",
+  "uses_hidden_reasoning": false
+}

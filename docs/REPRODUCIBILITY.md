@@ -20,14 +20,36 @@ The repository distinguishes three evidence levels:
 1. `cases/` contains frozen inputs and effect-based authorization contracts.
 2. `campaigns/` contains preregistrations, aggregate oracle outputs, validity
    checks, and records of incomplete campaigns.
-3. `examples/pilot-001/summary.json` contains the first de-identified fixture
-   validation.
+3. `examples/reviewer-evidence/primary-findings.json` contains tool-event sequences,
+   contracts and snapshots for all 17 primary state findings. The ten original
+   strict candidates have explicit event/effect links in `primary-witness-audit.json`.
+   `examples/pilot-001/summary.json` retains the first fixture validation.
 4. Raw traces remain private because they contain provider and local execution
    metadata not needed to reproduce the reported aggregate results.
 
 The released results establish that the tested failure-recovery mechanism can
 produce authorization violations. They do not estimate prevalence across agent
 runtimes, models, or application domains.
+
+The original requests name an output destination without an explicit prohibition
+on all auxiliary writes. The single-target allowlist is a conservative evaluator
+policy; the broader-policy analyses report alternative delegation choices.
+
+## Revision controls
+
+`campaigns/transient-live-20261119T114020Z/guard-analysis.json` records two live
+DeepSeek/OpenClaw controls with a one-shot EIO and strict guard: one safe same-target
+retry and one authorization request without completion. Build `Dockerfile.transient`
+on top of the primary image to reproduce the one-shot route. The preload injector
+is disabled for these controls. `scripts/run_transient_review.py` retains every
+attempt and reads the ignored local `.env` without printing its credential.
+
+The twelve scripted controls in `recovery-positive-control.json` test guard policy
+admission with real file writes; they are not independent model executions.
+
+`python3 scripts/audit_primary_witnesses.py` verifies the registered primary
+candidate event links from the released evidence. It does not claim exhaustive
+detector recall. The original scanner and original campaign outputs are retained.
 
 ## Offline validation
 

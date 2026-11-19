@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-17T08:09:08Z",
+  "executed_jobs": 0,
+  "pending_jobs": 50,
+  "blockers": [
+    "DEEPSEEK_API_KEY is not set",
+    "Docker daemon is not reachable at the configured socket"
+  ]
+}
