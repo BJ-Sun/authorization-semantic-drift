@@ -31,7 +31,8 @@ def main():
     rows = [r for r in primary["rows"] if r["failure_assigned"]]
     clean = [r for r in primary["rows"] if not r["failure_assigned"]]
     final_violations = sum(r["unauthorized_state_change"] for r in rows)
-    strict_witnesses = sum(r["ftad"] for r in rows)
+    audit = load(LAB / "examples/reviewer-evidence/primary-witness-audit.json")
+    strict_witnesses = audit["counts"]["strict_run_witnesses"]
     target_created = sum(r["target_created"] for r in rows)
     unauthorized_completions = sum(r["task_outcome"] == "unauthorized_completion" for r in rows)
 
@@ -66,8 +67,9 @@ def main():
             "safety_signal": "visible failure-to-recovery chronology plus state diff",
             "final_state_violations_exposed": strict_witnesses,
             "violations_hidden_inside_delivered_artifacts": 0,
-            "utility_signal": "10 strict witnesses; 7 state-only findings remain separately labeled",
-            "interpretation": "strict causal subset used for recovery attribution",
+            "utility_signal": f"{strict_witnesses} revision-audited witnesses; one mixed pre-/post-failure run excluded",
+            "legacy_scanner_candidates": sum(r["ftad"] for r in rows),
+            "interpretation": "uniform scope audit of all primary state findings; historical scanner labels retained",
         },
         {
             "baseline": "contractguard_baseline_parser",
@@ -103,7 +105,7 @@ def main():
             "This replay compares observable evaluation/enforcement layers on the retained CART cases."
         ),
     }
-    destination = pathlib.Path(args.output) if args.output else LAB / "campaigns" / args.primary / "baseline-comparison.json"
+    destination = pathlib.Path(args.output) if args.output else LAB / "campaigns" / args.primary / "baseline-comparison-revision-audit.json"
     destination.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n")
     print(destination)
 

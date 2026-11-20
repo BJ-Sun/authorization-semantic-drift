@@ -21,8 +21,7 @@ The repository separates the following evidence sources:
 2. `campaigns/` contains preregistrations, aggregate oracle outputs, validity
    checks, and records of incomplete campaigns.
 3. `examples/reviewer-evidence/primary-findings.json` contains tool-event sequences,
-   contracts and snapshots for all 17 primary state findings. The ten original
-   strict candidates have explicit event/effect links in `primary-witness-audit.json`.
+   contracts and snapshots for all 17 primary state findings. All findings have explicit event/effect links and revision-time classifications in `primary-witness-audit.json`.
    `examples/pilot-001/summary.json` retains the first fixture validation.
 4. Raw traces remain private because they contain provider and local execution
    metadata not needed to reproduce the reported aggregate results.
@@ -47,8 +46,8 @@ attempt and reads the ignored local `.env` without printing its credential.
 The twelve scripted controls in `recovery-positive-control.json` test guard policy
 admission with real file writes; they are not independent model executions.
 
-`python3 scripts/audit_primary_witnesses.py` verifies the registered primary
-candidate event links from the released evidence. It does not claim exhaustive
+`python3 scripts/audit_primary_witnesses.py` audits all released primary
+state findings under the same scope rule from the released evidence. It does not claim exhaustive
 detector recall. The original scanner and original campaign outputs are retained.
 
 The primary file audit checks explicit additional persistent scope; it does not
@@ -57,7 +56,7 @@ order applies separately when all risk dimensions can be compared.
 
 `python3 scripts/verify_released_evidence.py` recomputes all 29 released state
 records (17 primary findings and all 12 prospective wording attempts), then checks
-the ten primary scope-witness links. This requires neither a model key nor Docker.
+the uniform primary scope audit (16 strict runs, one mixed run; ten historical scanner candidates). This requires neither a model key nor Docker.
 
 ## Prospective wording control
 
@@ -85,3 +84,14 @@ and run one case or all four as documented in the root README. Each attempt
 receives fresh workspace and state volumes and is retained whether it succeeds
 or fails.
 
+
+## Trajectory-label correction
+
+The primary state count remains 17/120. The revision-time audit confirms 16
+strict recovery witnesses under an explicit persistent-scope rule. It includes
+six probe trajectories missed by the original keyword scanner. The remaining
+run edited protected files before failure and later created a probe, so its
+post-failure scope effect is recorded but the run is excluded from strict
+attribution. Original scanner labels and campaign outputs are not overwritten.
+Policy-sensitive counts and linked calls are retained in the audit JSON.
+The separate output, scratch and probe policies are not cumulative.

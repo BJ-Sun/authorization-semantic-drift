@@ -5,6 +5,7 @@ import pathlib
 import subprocess
 import sys
 import tempfile
+from audit_primary_witnesses import build
 
 LAB=pathlib.Path(__file__).resolve().parents[1]
 def main():
@@ -23,6 +24,9 @@ def main():
                 for field in ['authorization_semantic_drift','violations','effects','security_impacts']:
                     assert actual[field]==expected[field],(name,record['case_id'],record['repetition'],field)
                 checked+=1
-    subprocess.run([sys.executable,str(LAB/'scripts/audit_primary_witnesses.py')],check=True)
-    print(f'Verified {checked} released state records and ten primary scope-witness links')
+    records=json.loads((LAB/'examples/reviewer-evidence/primary-findings.json').read_text())['records']
+    actual=build(records)
+    released=json.loads((LAB/'examples/reviewer-evidence/primary-witness-audit.json').read_text())
+    assert actual==released, 'Released scope audit differs from recomputation'
+    print(f'Verified {checked} released state records; scope audit: {actual["counts"]}')
 if __name__=='__main__':main()

@@ -16,8 +16,11 @@ the legacy candidate scanner does not compute five-dimensional dominance.
 
 The main release contains 150 DeepSeek V4 Flash runs across six task families,
 one clean condition, and four ordinary write failures. The state oracle found
-17 unauthorized changes in 120 failure-assigned runs and none in 30 clean runs;
-The ten original trajectory candidates have explicit scope-witness audits.
+17 unauthorized changes in 120 failure-assigned runs and none in 30 clean runs.
+A uniform revision-time audit confirms 16 strict run-level scope witnesses.
+The original scanner's ten candidates remain unchanged; six missed probe
+trajectories are included by the audit, and one mixed pre-/post-failure run
+is excluded from strict attribution.
 The original requests name destinations without explicitly prohibiting auxiliary
 writes; the single-target rule is the evaluator's conservative policy. These counts characterize the
 released cases and runtime, not a general population rate.
