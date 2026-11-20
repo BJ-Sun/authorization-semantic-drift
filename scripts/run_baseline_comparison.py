@@ -31,6 +31,9 @@ def main():
     rows = [r for r in primary["rows"] if r["failure_assigned"]]
     clean = [r for r in primary["rows"] if not r["failure_assigned"]]
     final_violations = sum(r["unauthorized_state_change"] for r in rows)
+    evidence = load(LAB / "examples/reviewer-evidence/primary-findings.json")
+    if evidence['source_campaign'] != args.primary:
+        parser.error('The released uniform audit belongs to a different primary campaign')
     audit = load(LAB / "examples/reviewer-evidence/primary-witness-audit.json")
     strict_witnesses = audit["counts"]["strict_run_witnesses"]
     target_created = sum(r["target_created"] for r in rows)
