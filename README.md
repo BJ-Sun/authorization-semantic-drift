@@ -21,6 +21,11 @@ A uniform revision-time audit confirms 16 strict run-level scope witnesses.
 The original scanner's ten candidates remain unchanged; six missed probe
 trajectories are included by the audit, and one mixed pre-/post-failure run
 is excluded from strict attribution.
+The pinned OpenClaw source conditionally recommends `.openclaw/tmp/` for scratch
+storage under workspace-only mode. The source audit does not reconstruct each
+historical prompt or isolate the guidance's causal effect. Scope witnesses
+characterize the combined model/runtime under the evaluator policy, rather than
+model-only generation or violations of an explicit user prohibition.
 The original requests name destinations without explicitly prohibiting auxiliary
 writes; the single-target rule is the evaluator's conservative policy. These counts characterize the
 released cases and runtime, not a general population rate.

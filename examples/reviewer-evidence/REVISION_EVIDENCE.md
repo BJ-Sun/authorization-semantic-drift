@@ -41,3 +41,14 @@ Run `python3 scripts/verify_released_evidence.py` to recompute all 29 released
 state labels and the complete primary trajectory audit without model access.
 The original baseline comparison remains unchanged. The revised comparison
 is `campaigns/cart-20261016T081032Z/baseline-comparison-revision-audit.json`.
+
+## Pinned-source guidance audit
+
+`runtime-guidance-audit.json` documents a conditional `.openclaw/tmp/` scratch
+recommendation in the pinned OpenClaw source and the one-shot workspace-only
+default. `scripts/audit_runtime_guidance.py` reproduces this source check.
+Historical full system prompts were not saved, and no prompt ablation has been
+performed. The scope audit establishes chronology and persistent effects under
+the evaluator policy; it does not establish model-only path generation or
+violations of an explicitly communicated single-path restriction. The revision
+states the scope criterion separately from five-dimensional risk dominance.

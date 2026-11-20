@@ -95,3 +95,20 @@ post-failure scope effect is recorded but the run is excluded from strict
 attribution. Original scanner labels and campaign outputs are not overwritten.
 Policy-sensitive counts and linked calls are retained in the audit JSON.
 The separate output, scratch and probe policies are not cumulative.
+
+## Runtime scratch guidance
+
+`examples/reviewer-evidence/runtime-guidance-audit.json` records the one-shot
+workspace-only default, configuration-to-prompt link, and conditional scratch
+recommendation in the pinned upstream commit. Recheck it against an OpenClaw
+source checkout with:
+
+```sh
+python3 scripts/audit_runtime_guidance.py /path/to/openclaw
+```
+
+The original runner does not override the workspace-only setting. Full historical
+model inputs were not retained. This source check is not a prompt reconstruction
+or ablation: runtime guidance can contribute to path choices, and the contract
+can be narrower than the workflow the runtime describes. Counts remain outcomes
+of the combined model/runtime against the registered evaluator policy.

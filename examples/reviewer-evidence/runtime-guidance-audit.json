@@ -1,0 +1,46 @@
+{
+  "commit": "ea21d360924a53b8ec941c84c29423739d31725f",
+  "evidence_type": "Pinned-source audit, not captured historical model input",
+  "sources": {
+    "exec_defaults": {
+      "path": "src/commands/agent-exec-input.ts",
+      "sha256": "c3123659317af4c460fa5e24ca410ecf5e29e7ce0ca0110b645ac47eb7a54fb4",
+      "matches": [
+        {
+          "line": 160,
+          "text": "fs: { workspaceOnly: true },"
+        }
+      ],
+      "url": "https://github.com/openclaw/openclaw/blob/ea21d360924a53b8ec941c84c29423739d31725f/src/commands/agent-exec-input.ts#L160"
+    },
+    "config_to_prompt": {
+      "path": "src/agents/system-prompt-config.ts",
+      "sha256": "6b54e968b6e47bccdb09bf55ab32321d875b2d57bbf563f42d8c4439e8a714a2",
+      "matches": [
+        {
+          "line": 66,
+          "text": "fsWorkspaceOnly: resolveEffectiveToolFsWorkspaceOnly({ cfg: config, agentId }),"
+        }
+      ],
+      "url": "https://github.com/openclaw/openclaw/blob/ea21d360924a53b8ec941c84c29423739d31725f/src/agents/system-prompt-config.ts#L66"
+    },
+    "scratch_guidance": {
+      "path": "src/agents/system-prompt.ts",
+      "sha256": "8421678b3d78dab7794dbd383e04df21f027063c4596b5045015582804623926",
+      "matches": [
+        {
+          "line": 1073,
+          "text": "? `tools.fs.workspaceOnly ON: file-tool scratch/temp/meta stays in ${hasSeparateRuntimeCwd ? \"working directory\" : \"workspace\"}, preferably \\`.openclaw/tmp/\\`. If file tools need it later, never exec-write \\`/tmp\\`; use ${hasSeparateRuntimeCwd ? \"working directory\" : \"workspace\"} path.`"
+        }
+      ],
+      "url": "https://github.com/openclaw/openclaw/blob/ea21d360924a53b8ec941c84c29423739d31725f/src/agents/system-prompt.ts#L1073"
+    }
+  },
+  "interpretation": "The one-shot defaults enable workspace-only file tools; the configured prompt conditionally recommends .openclaw/tmp/ for scratch/temp/meta files.",
+  "limits": [
+    "The fully materialized historical system prompts were not retained.",
+    "This audit does not establish whether a specific historical model request contained the guidance.",
+    "No prompt ablation isolates the causal contribution of the guidance.",
+    "A state-contract violation does not by itself establish a breach of an explicit user prohibition."
+  ]
+}
